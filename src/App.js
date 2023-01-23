@@ -1,7 +1,5 @@
 //https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,rain,windspeed_10m,winddirection_10m
 
-
-
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import React, { useState, useEffect } from 'react';
@@ -13,6 +11,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 
 function App() {
@@ -33,6 +33,18 @@ function App() {
     
     <div className="App">
 
+    <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField id="outlined-basic" label="Latitude" variant="outlined" /> 
+      <TextField id="outlined-basic" label="Longitude" variant="outlined" /> 
+    </Box>
+  
      <Stack direction="row" spacing={2}>
     
    <Button variant ="contained" onClick={() => {console.log(weatherInfo)}}>{weatherInfo.latitude}</Button>
