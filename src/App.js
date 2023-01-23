@@ -5,24 +5,20 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Weather from "./Weather";
 import Signup from "./Signup";
-import Login from './Login';
-
-
+import Login from "./Login";
 
 function App() {
-	return (
-		<main className="App">
-      
-			<Router>
-				<Routes>
-					<Route path="/signup" exact element={<Signup />} />
-					<Route path="/login" element={<Login />} />
+  return (
+    <main className="App">
+      <Router>
+        <Routes>
+          <Route path="/signup" exact element={<Signup />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/weather" element={<Weather />} />
-				</Routes>
-			</Router>
-    
-		</main>
-	);
+        </Routes>
+      </Router>
+    </main>
+  );
 }
 
 export default App;
