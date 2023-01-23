@@ -1,5 +1,4 @@
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Table from '@mui/material/Table';
@@ -13,7 +12,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 
-function App() {
+function Profile() {
 
   const [profileInfo, setProfileInfo] = useState([]);
   useEffect(() =>{
@@ -75,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default Profile;
