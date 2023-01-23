@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Table from '@mui/material/Table';
@@ -8,8 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+
 
 
 function Profile() {
@@ -27,18 +25,6 @@ function Profile() {
     
     <div className="App">
 
-    <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <TextField id="outlined-basic" label="Latitude" variant="outlined" /> 
-      <TextField id="outlined-basic" label="Longitude" variant="outlined" /> 
-    </Box>
-
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -51,7 +37,7 @@ function Profile() {
             <TableCell align="right">E-mail</TableCell>
           </TableRow>
         </TableHead>
-        <Button variant ="contained" onClick={() => {console.log()}}>{profileInfo.name}</Button>
+  
         <TableBody>
         
             <TableRow
