@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Weather from "./Weather";
 import Signup from "./Signup";
 import Login from "./Login";
+import Profile from "./Profile";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Routes>
 		<Route path="/signup" exact element={<Signup />} />
           <Route path="/login" element={<Login />} />
-		  <Route path="/profile" exact element={<Profile />} />
+		  <Route path="/profile" element={<Profile />} />
           <Route path="/weather" element={<Weather />} />
         </Routes>
       </Router>
