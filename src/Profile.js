@@ -44,7 +44,8 @@ function Profile() {
         <TableHead>
           <TableRow>
             <TableCell>Your Profile</TableCell>
-            <TableCell align="right">Id</TableCell>
+            <TableCell align="right">Id</TableCell>         
+             <TableCell align="right">Username</TableCell>
             <TableCell align="right">First Name</TableCell>
             <TableCell align="right">Last Name</TableCell>
             <TableCell align="right">E-mail</TableCell>
@@ -60,6 +61,7 @@ function Profile() {
                 {profileInfo.name}
               </TableCell>
               <TableCell align="right">{profileInfo.id}</TableCell>
+              <TableCell align="right">{profileInfo.username}</TableCell>
               <TableCell align="right">{profileInfo.firstname}</TableCell>
               <TableCell align="right">{profileInfo.lastname}</TableCell>
               <TableCell align="right">{profileInfo.email}</TableCell>
