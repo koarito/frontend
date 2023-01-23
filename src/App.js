@@ -12,8 +12,9 @@ function App() {
     <main className="App">
       <Router>
         <Routes>
-          <Route path="/signup" exact element={<Signup />} />
+		<Route path="/signup" exact element={<Signup />} />
           <Route path="/login" element={<Login />} />
+		  <Route path="/profile" exact element={<Profile />} />
           <Route path="/weather" element={<Weather />} />
         </Routes>
       </Router>

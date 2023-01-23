@@ -75,9 +75,7 @@ function Weather() {
               <TableCell align="right">{weatherInfo.longitude}</TableCell>
               <TableCell align="right">{weatherInfo.temperature_2m}</TableCell>
               <TableCell align="right">{weatherInfo.rain}</TableCell>
-              <TableCell align="right">
-                {weatherInfo.winddirection_10m}
-              </TableCell>
+              <TableCell align="right">{weatherInfo.winddirection_10m}</TableCell>
               <TableCell align="right">{weatherInfo.windspeed_10m}</TableCell>
             </TableRow>
           </TableBody>
