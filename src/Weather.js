@@ -21,11 +21,12 @@ function Weather() {
     loadWeather();
   });
   const loadWeather = async () => {
-    const result = await axios.get(
-      "https://api.open-meteo.com/v1/forecast?latitude=31.63&longitude=-8.00&current_weather=true&temperature_2m,rain,windspeed_10m"
-    );
+    const result = await axios.get("http://localhost:8080/weather/info?latitude=31.63&longitude=-8.00", {}, {auth: {
+      username: "user",
+      password: "fc5ad5bb-4447-4054-86d4-c1944366c0df"
+    }});
     setWeatherInfo(result.data);
-  };
+  }
   return (
     <div className="App">
       <Box
