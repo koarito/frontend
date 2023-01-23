@@ -7,23 +7,31 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import EditProfile from './EditProfile';
 
 
 
 function Profile() {
 
   const [profileInfo, setProfileInfo] = useState([]);
+  const [email, setEmail] = useState();
+
   useEffect(() =>{
     loadProfile();
   })
   const loadProfile = async () => {
     const result = await axios.get("http://localhost:8080/user/getUser?email=Elena.Rutsson@gmail.com", {}, {auth: {
           username: "user",
-          password: "49721bcc-f464-46ee-9692-eb4677c806fc"
+          password: "ac78ef77-65bd-4ea7-9aac-f9e03bba6dd8"
         }});
         setProfileInfo(result.data);
-        console.log(profileInfo);
       };  
+
+      const handleChange = () => {
+       
+      }
   return (
 
     
@@ -61,6 +69,12 @@ function Profile() {
         </TableBody>
       </Table>
     </TableContainer>
+    
+
+    <Stack direction="row" spacing={2}>
+
+<Button variant="contained" onClick={EditProfile()}>Change profile</Button>
+</Stack>
   
     </div>
   );

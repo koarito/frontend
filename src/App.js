@@ -7,6 +7,7 @@ import Weather from "./Weather";
 import Signup from "./Signup";
 import Login from "./Login";
 import Profile from "./Profile";
+import EditProfile from "./EditProfile"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 		<Route path="/signup" exact element={<Signup />} />
           <Route path="/login" element={<Login />} />
 		  <Route path="/profile" element={<Profile />} />
+		  <Route path="/editprofile" element={<EditProfile />} />
           <Route path="/weather" element={<Weather />} />
         </Routes>
       </Router>
