@@ -17,9 +17,13 @@ function Profile() {
     loadProfile();
   })
   const loadProfile = async () => {
-    const result = await axios.get("localhost:8080/api/getUser");
-    setProfileInfo(result.data);
-  }
+    const result = await axios.get("http://localhost:8080/user/getUser?email=Elena.Rutsson@gmail.com", {}, {auth: {
+          username: "user",
+          password: "49721bcc-f464-46ee-9692-eb4677c806fc"
+        }});
+        setProfileInfo(result.data);
+        console.log(profileInfo);
+      };  
   return (
 
     
@@ -44,11 +48,11 @@ function Profile() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {profileInfo.name}
+                {profileInfo.email}
               </TableCell>
               <TableCell align="right">{profileInfo.id}</TableCell>
-              <TableCell align="right">{profileInfo.firstname}</TableCell>
-              <TableCell align="right">{profileInfo.lastname}</TableCell>
+              <TableCell align="right">{profileInfo.firstName}</TableCell>
+              <TableCell align="right">{profileInfo.lastName}</TableCell>
               <TableCell align="right">{profileInfo.email}</TableCell>
               <TableCell align="right">{profileInfo.role}</TableCell>
         

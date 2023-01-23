@@ -2,5 +2,5 @@ import axios from "axios";
 
 
 export default axios.create({
-  baseURL: "http://localhost:8080/submitUser",
+  baseURL: "http://localhost:8080/saveUser",
 });
