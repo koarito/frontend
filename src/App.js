@@ -1,4 +1,5 @@
 //https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,rain,windspeed_10m,winddirection_10m
+//http://localhost:8080/weather/info?latitude=31.63&longitude=-8.00
 
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -17,20 +18,17 @@ import TextField from '@mui/material/TextField';
 
 function App() {
 
+
   const [weatherInfo, setWeatherInfo] = useState([]);
   useEffect(() =>{
     loadWeather();
   })
   const loadWeather = async () => {
-    const result = await axios.get("http://localhost:8080/weather/info?latitude=31.63&longitude=-8.00", {}, {auth: {
-      username: "user",
-      password: "c88a6e5c-3136-444a-8109-ae87ce3c8ed3"
-    }});
+    const result = await axios.get("https://api.open-meteo.com/v1/forecast?latitude=31.63&longitude=-8.00&current_weather=true&temperature_2m,rain,windspeed_10m");
     setWeatherInfo(result.data);
   }
   return (
 
-    
     <div className="App">
 
     <Box
@@ -68,7 +66,6 @@ function App() {
         <TableBody>
         
             <TableRow
-              key={weatherInfo.latitude}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
@@ -76,10 +73,10 @@ function App() {
               </TableCell>
               <TableCell align="right">{weatherInfo.latitude}</TableCell>
               <TableCell align="right">{weatherInfo.longitude}</TableCell>
-              <TableCell align="right">{weatherInfo.temperature}</TableCell>
+              <TableCell align="right">{weatherInfo.temperature_2m}</TableCell>
               <TableCell align="right">{weatherInfo.rain}</TableCell>
-              <TableCell align="right">{weatherInfo.wind_direction_10m}</TableCell>
-              <TableCell align="right">{weatherInfo.wind_speed_10m}</TableCell>
+              <TableCell align="right">{weatherInfo.winddirection_10m}</TableCell>
+              <TableCell align="right">{weatherInfo.windspeed_10m}</TableCell>
             </TableRow>
           
         </TableBody>
