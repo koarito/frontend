@@ -33,7 +33,7 @@ function EditProfile() {
     e.preventDefault();
     try {
       console.log("Data for update : ", user);
-      const response = await axios.patch(`https://localhost:8080/user/editUser/Elena.Rutsson@gmail.com?${user.firstName}${user.lastName}`, user);
+      const response = await axios.patch(`https://localhost:8080/user/editUser/Elena.Rutsson@gmail.com?firstName=${user.firstName}&lastName=${user.lastName}`, user);
     } catch (error) {
       console.log(error);
     }

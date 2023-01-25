@@ -24,7 +24,7 @@ function Profile() {
   const loadProfile = async () => {
     const result = await axios.get("http://localhost:8080/user/getUser?email=Elena.Rutsson@gmail.com", {}, {auth: {
           username: "user",
-          password: "ac78ef77-65bd-4ea7-9aac-f9e03bba6dd8"
+          password: "8dccc17b-cf99-406a-878d-f0f218a192d8"
         }});
         setProfileInfo(result.data);
       };  
