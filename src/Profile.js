@@ -16,22 +16,32 @@ import EditProfile from './EditProfile';
 function Profile() {
 
   const [profileInfo, setProfileInfo] = useState([]);
-  const [email, setEmail] = useState();
 
   useEffect(() =>{
     loadProfile();
   })
   const loadProfile = async () => {
-    const result = await axios.get("http://localhost:8080/user/getUser?email=Elena.Rutsson@gmail.com", {}, {auth: {
+    const result = await axios.get("http://localhost:8080/user/getuser?email=Elena.Rutsson@gmail.com", {}, {auth: {
           username: "user",
-          password: "8dccc17b-cf99-406a-878d-f0f218a192d8"
+          password: "c3014ad4-9f4b-4c09-b4c2-5c3447969f37",
+      
         }});
         setProfileInfo(result.data);
       };  
 
-      const handleChange = () => {
-       
-      }
+
+      const deleteUser = async (id) => {
+        await axios.delete(`http://localhost:8080/user/deleteuser?id=${id}`, {}, {auth: {
+          username: "user",
+          password: "c3014ad4-9f4b-4c09-b4c2-5c3447969f37"
+         
+
+      },
+    });
+        loadProfile();
+      };
+
+
   return (
 
     
@@ -70,11 +80,14 @@ function Profile() {
       </Table>
     </TableContainer>
     
+                  <button
+                    className="btn btn-danger mx-2"
+                    onClick={() => deleteUser(profileInfo.id)}
+                  >      
+                  Delete
+                  </button>
+                   
 
-    <Stack direction="row" spacing={2}>
-
-<Button variant="contained" onClick={EditProfile()}>Change profile</Button>
-</Stack>
   
     </div>
   );
