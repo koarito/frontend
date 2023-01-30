@@ -29,7 +29,7 @@ function EditProfile() {
       {
         auth: {
           username: "user",
-          password: "9983ea43-9dfe-4368-8ea8-c21908df0ab1",
+          password: "2e3b6574-3960-45cf-89e7-1776f1001ddf",
         },
       }
     );
