@@ -28,9 +28,9 @@ function AuthenticatedRoute({ children }) {
           <BrowserRouter>
             <HeaderComponent />
             <Routes>
-              <Route path="/" element={<LoginComponent />} />
+            
               <Route path="/signup" exact element={<Signup />} />
-              <Route path="/login" element={<LoginComponent />} />
+              <Route path="/login" exact element={<LoginComponent />} />
               <Route
                 path="/welcome/:username"
                 element={
