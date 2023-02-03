@@ -11,4 +11,4 @@ export const executeBasicAuthenticationService
 
 export const executeJwtAuthenticationService
     = (username, password) => 
-    axios.post(`/authenticate`,{username,password})
+    axios.post(`/api/auth/authenticate`,{username,password})
