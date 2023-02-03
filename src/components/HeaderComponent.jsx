@@ -16,7 +16,7 @@ function HeaderComponent() {
         <div className="row">
           <nav className="navbar navbar-expand-lg">
           
-            <div className="collapse navbar-collapse">
+         
               <ul className="navbar-nav">
                 <li className="nav-item">
                   {isAuthenticated && (
@@ -26,7 +26,28 @@ function HeaderComponent() {
                   )}
                 </li>
               </ul>
-            </div>
+
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  {isAuthenticated && (
+                    <Link className="nav-link" to="/profile">
+                      Profile
+                    </Link>
+                  )}
+                </li>
+              </ul>
+
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  {isAuthenticated && (
+                    <Link className="nav-link" to="/editprofile">
+                      Edit Profile
+                    </Link>
+                  )}
+                </li>
+              </ul>
+
+
             <ul className="navbar-nav">
               <li className="nav-item">
                 {!isAuthenticated && (
