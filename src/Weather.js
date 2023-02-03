@@ -43,10 +43,10 @@ const tableData = weatherInfo => {
 }
 
   const loadWeather = async () => {
-    const result = await axios.get(`http://localhost:8080/weather/info?latitude=${cityLatitude.get(selectedCity)}&longitude=${cityLongitude.get(selectedCity)}`, {}, {auth: {
+    const result = await axios.get(`http://localhost:8080/weather/info?latitude=${cityLatitude.get(selectedCity)}&longitude=${cityLongitude.get(selectedCity)}`, {}, {/* auth: {
       username: "user",
       password: "ed6962d8-16f1-42e9-a2eb-886955f49d6c"
-    }});
+    } */});
     setWeatherInfo(result.data);
   }
 

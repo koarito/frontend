@@ -99,10 +99,11 @@ export default function CreateUser() {
     else{
       axios.post("http://localhost:8080/api/auth/signup", 
       {firstName: values.firstname, lastname: values.lastname, email: values.email, password: values.password, role:"USER"
-    },{auth: {
+    },{
+      /* auth: {
       username: "user",
       password: "7c2313ae-2818-404b-8767-e97d83b33403"
-    }})
+    } */})
     }
 
   };

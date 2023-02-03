@@ -26,6 +26,16 @@ function HeaderComponent() {
                   )}
                 </li>
               </ul>
+              
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  {isAuthenticated && (
+                    <Link className="nav-link" to="/weather">
+                      Weather
+                    </Link>
+                  )}
+                </li>
+              </ul>
 
               <ul className="navbar-nav">
                 <li className="nav-item">

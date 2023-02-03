@@ -27,10 +27,10 @@ function EditProfile() {
         email: profileInfo.email,
       },
       {
-        auth: {
+        /* auth: {
           username: "user",
           password: "2e3b6574-3960-45cf-89e7-1776f1001ddf",
-        },
+        }, */
       }
     );
   

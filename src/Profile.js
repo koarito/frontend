@@ -32,10 +32,10 @@ function Profile() {
       "http://localhost:8080/user/getuser?email=amina@aminas.se",
       {},
       {
-        auth: {
+      /*   auth: {
           username: "user",
           password: "a7d2538f-a41c-4c76-9043-3798cc170ac5",
-        },
+        }, */
       }
     );
     setProfileInfo(result.data);
@@ -46,10 +46,10 @@ function Profile() {
       `http://localhost:8080/user/deleteuser?id=${id}`,
       {},
       {
-        auth: {
+       /*  auth: {
           username: "user",
           password: "a7d2538f-a41c-4c76-9043-3798cc170ac5",
-        },
+        }, */
       }
     );
     loadProfile();
