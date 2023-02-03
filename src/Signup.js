@@ -12,7 +12,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import axios from "./api/axios";
+import axios from "./api/ApiClient";
 
 export default function CreateUser() {
   const [values, setValues] = React.useState({

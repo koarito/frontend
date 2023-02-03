@@ -1,5 +1,5 @@
 import * as React from "react";
-import axios from "./api/axios";
+import axios from "./api/ApiClient";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";

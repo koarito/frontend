@@ -5,7 +5,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Weather from "./Weather";
 import Signup from "./Signup";
-import Login from "./Login";
+import LoginComponent from "./components/LoginComponent";
 import Profile from "./Profile";
 import EditProfile from "./EditProfile";
 
@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Routes>
 		<Route path="/signup" exact element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<LoginComponent />} />
 		  <Route path="/profile" element={<Profile />} />
       <Route path="/editprofile" element={<EditProfile />} />
           <Route path="/weather" element={<Weather />} />
