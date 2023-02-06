@@ -29,7 +29,7 @@ function Profile() {
 
   const loadProfile = async () => {
     const result = await axios.get(
-      "http://localhost:8080/user/getuser?email=amina@aminas.se",
+      "http://localhost:8080/user/getuser?email=rutis@rutan.se",
       {},
       {
       /*   auth: {

@@ -7,31 +7,25 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
 
+
 function EditProfile() {
   const [profileInfo, setProfileInfo] = React.useState({
     firstName: "",
     lastName: "",
-    email: "",
+   
   });
 
   const handleChange = (prop) => (e) => {
     setProfileInfo({ ...profileInfo, [prop]: e.target.value });
-  };
+  }; //TODO: THEN GO TO PROFILE. NOW USER GETS LOGGED OUT AFTER EDIT
 
   const handleSubmit = () => {
-    const result = axios.patch(
-      "http://localhost:8080/user/edituser/252",
+  axios.patch(
+      `http://localhost:8080/user/edituser/rutis@rutan.se`,
       {
         firstName: profileInfo.firstName,
         lastName: profileInfo.lastName,
-        email: profileInfo.email,
-      },
-      {
-        /* auth: {
-          username: "user",
-          password: "2e3b6574-3960-45cf-89e7-1776f1001ddf",
-        }, */
-      }
+      },{}
     );
   
   };
@@ -75,17 +69,7 @@ function EditProfile() {
               />
             </FormControl>
           </Grid>
-          <Grid item sx={{ width: 0.5 }}>
-            <FormControl fullWidth>
-              <InputLabel>Mailadress</InputLabel>
-              <OutlinedInput
-                label="Mailadress"
-                value={profileInfo.email}
-                onChange={handleChange("email")}
-                sx={{ borderRadius: "29px" }}
-              />
-            </FormControl>
-          </Grid>
+    
         </Grid>
 
         <Button fullWidth variant="contained" type="submit">
