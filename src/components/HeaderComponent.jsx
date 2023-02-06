@@ -61,11 +61,23 @@ function HeaderComponent() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 {!isAuthenticated && (
+                  <Link className="nav-link" to="/signup">
+                    Signup
+                  </Link>
+                )}
+              </li>
+              </ul>
+
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                {!isAuthenticated && (
                   <Link className="nav-link" to="/login">
                     Login
                   </Link>
                 )}
-              </li>
+
+                </li>
+
               <li className="nav-item">
                 {isAuthenticated && (
                   <Link className="nav-link" to="/logout" onClick={logout}>

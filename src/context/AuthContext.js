@@ -2,7 +2,7 @@ import React from "react";
 import { createContext, useContext, useState } from "react";
 import axios from "../api/ApiClient";
 import { executeJwtAuthenticationService } from "../api/AuthenticationApiService";
-
+  
 export const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
