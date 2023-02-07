@@ -14,7 +14,19 @@ import Paper from "@mui/material/Paper";
 import { InputLabel, MenuItem, Select, Typography} from "@mui/material";
 
 function Weather() {
-  const [weatherInfo, setWeatherInfo] = useState([]);
+  const [weatherInfo, setWeatherInfo] = useState({
+    hourly_units: {
+      time: "",
+      temperature_2m:"",
+      windspeed_10m: "",
+      winddirection_10m: ""
+  }, hourly: {
+    time: [],
+    temperature_2m: [],
+    windspeed_10m: [],
+    winddirection_10m: []
+  }
+  })
   const [selectedCity, setSelectedCity] = useState("Marrakech");
 
   const cityLatitude = new Map([
