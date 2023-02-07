@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { Link, useParams } from "react-router-dom";
+import AuthProvider, { useAuth } from "../context/AuthContext";
 
 function HeaderComponent() {
   const authContext = useAuth();
   const isAuthenticated = authContext.isAuthenticated;
-
+  const username = useParams();
+AuthProvider(username);
   function logout() {
     authContext.logout();
   }
@@ -40,7 +41,7 @@ function HeaderComponent() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   {isAuthenticated && (
-                    <Link className="nav-link" to="/profile">
+                    <Link className="nav-link" to={`/profile/${authContext.username}`}>
                       Profile
                     </Link>
                   )}
@@ -50,7 +51,7 @@ function HeaderComponent() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   {isAuthenticated && (
-                    <Link className="nav-link" to="/editprofile">
+                    <Link className="nav-link" to={`/editprofile/${authContext.username}`}>
                       Edit Profile
                     </Link>
                   )}

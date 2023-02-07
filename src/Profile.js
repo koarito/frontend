@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useParams } from "react-router-dom";
 
 function Profile() {
   const [profileInfo, setProfileInfo] = React.useState({
@@ -15,6 +16,8 @@ function Profile() {
     email: "",
   });
 
+
+  let {username} = useParams();
   /*
   let config = {
     headers: {
@@ -29,7 +32,7 @@ function Profile() {
 
   const loadProfile = async () => {
     const result = await axios.get(
-      "http://localhost:8080/user/getuser?email=rutis@rutan.se",
+      `http://localhost:8080/user/getuser?email=${username}`,
       {},
       {
       /*   auth: {

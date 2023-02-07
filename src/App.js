@@ -23,7 +23,7 @@ function AuthenticatedRoute({ children }) {
 
   function App() {
     return (
-      <div className="WeekPlanner">
+      <div className="App">
         <AuthProvider>
           <BrowserRouter>
             <HeaderComponent />
@@ -40,16 +40,16 @@ function AuthenticatedRoute({ children }) {
                 }
               />
               <Route
-                path="/profile"
+                path="/profile/:username"
                 element={
                   <AuthenticatedRoute>
                     <Profile />
                   </AuthenticatedRoute>
                 }
               />
-
+   
               <Route
-                path="/editprofile"
+                path="/editprofile/:username"
                 element={
                   <AuthenticatedRoute>
                     <EditProfile />

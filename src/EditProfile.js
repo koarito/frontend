@@ -6,6 +6,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import { Button } from "@mui/material";
+import { useParams } from "react-router-dom";
 
 
 function EditProfile() {
@@ -15,13 +16,19 @@ function EditProfile() {
    
   });
 
+
+ 
   const handleChange = (prop) => (e) => {
     setProfileInfo({ ...profileInfo, [prop]: e.target.value });
   }; //TODO: THEN GO TO PROFILE. NOW USER GETS LOGGED OUT AFTER EDIT
 
+let {username} = useParams();
+console.log(username);
+
   const handleSubmit = () => {
+   
   axios.patch(
-      `http://localhost:8080/user/edituser/rutis@rutan.se`,
+      `http://localhost:8080/user/edituser/${username}`,
       {
         firstName: profileInfo.firstName,
         lastName: profileInfo.lastName,
